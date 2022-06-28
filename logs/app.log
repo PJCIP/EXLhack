@@ -1,0 +1,318 @@
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+TypeError: upload_file() missing 1 required positional argument: 'file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 92, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1734, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a FileStorage.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1734, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a FileStorage.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\datastructures.py", line 3020, in __getattr__
+    return getattr(self.stream, name)
+AttributeError: 'SpooledTemporaryFile' object has no attribute 'split'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\EXL\Hackathon\app.py", line 74, in upload_file
+    filename = file.split("/")[-1]
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\datastructures.py", line 3026, in __getattr__
+    return getattr(self.stream._file, name)
+AttributeError: '_io.BytesIO' object has no attribute 'split'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 92, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\EXL\Hackathon\app.py", line 77, in upload_file
+    with open(file,"rb") as data:
+TypeError: expected str, bytes or os.PathLike object, not FileStorage
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 93, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\EXL\Hackathon\app.py", line 78, in upload_file
+    blob_client.upload_blob(file.read())
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_blob_client.py", line 728, in upload_blob
+    return upload_block_blob(**options)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_upload_helpers.py", line 177, in upload_block_blob
+    process_storage_error(error)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_shared\response_handlers.py", line 181, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_upload_helpers.py", line 101, in upload_block_blob
+    response = client.upload(
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_generated\operations\_block_blob_operations.py", line 801, in upload
+    map_error(status_code=response.status_code, response=response, error_map=error_map)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\exceptions.py", line 107, in map_error
+    raise error
+azure.core.exceptions.ResourceExistsError: The specified blob already exists.
+RequestId:6d41e245-b01e-005b-3252-8aae5d000000
+Time:2022-06-27T18:16:20.4328632Z
+ErrorCode:BlobAlreadyExists
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>BlobAlreadyExists</Code><Message>The specified blob already exists.
+RequestId:6d41e245-b01e-005b-3252-8aae5d000000
+Time:2022-06-27T18:16:20.4328632Z</Message></Error>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 93, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\EXL\Hackathon\app.py", line 60, in upload_file
+    blob_client.upload_blob(file.read())
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_blob_client.py", line 728, in upload_blob
+    return upload_block_blob(**options)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_upload_helpers.py", line 177, in upload_block_blob
+    process_storage_error(error)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_shared\response_handlers.py", line 181, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_upload_helpers.py", line 101, in upload_block_blob
+    response = client.upload(
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\storage\blob\_generated\operations\_block_blob_operations.py", line 801, in upload
+    map_error(status_code=response.status_code, response=response, error_map=error_map)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\azure\core\exceptions.py", line 107, in map_error
+    raise error
+azure.core.exceptions.ResourceExistsError: The specified blob already exists.
+RequestId:6cc87c9a-b01e-0064-0952-8a66fe000000
+Time:2022-06-27T18:21:45.2881603Z
+ErrorCode:BlobAlreadyExists
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>BlobAlreadyExists</Code><Message>The specified blob already exists.
+RequestId:6cc87c9a-b01e-0064-0952-8a66fe000000
+Time:2022-06-27T18:21:45.2881603Z</Message></Error>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 75, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /upload_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\EXL\Hackathon\app.py", line 55, in upload_file
+    return f'{filename} is already in blob storage'
+UnboundLocalError: local variable 'filename' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 78, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Exception on /retrieve_file [POST]
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+TypeError: retrieve_files() missing 1 required positional argument: 'blob_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 128, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 611, in on_json_loading_failed
+    raise BadRequest(
+werkzeug.exceptions.BadRequest: 400 Bad Request: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\app.py", line 1391, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\EXL\Hackathon\app.py", line 116, in exceptions
+    request.get_json(),
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\werkzeug\wrappers\request.py", line 571, in get_json
+    return self.on_json_loading_failed(None)
+  File "c:\users\joseph\appdata\local\programs\python\python38\lib\site-packages\flask\wrappers.py", line 133, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

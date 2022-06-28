@@ -1,4 +1,4 @@
 Flask==2.1.2
-azure_storage==0.37.0
+azure_storage
 PyYAML==6.0
-gunicorn==20.1.0
+gunicorn

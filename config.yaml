@@ -3,3 +3,11 @@ files_container : "files"
 account_url : "https://hack22.blob.core.windows.net"
 key : "TDA3NqgbP5eHuhHeJZPuZo0hNZMre4kGXdvtXEobRfRCo8V+2a1RI6QKyBrWKmv3DziNonk+1NgL+AStD7A+aw=="
 # source_folder : ""
+
+
+aws_key_id : "AKIAYJHAXWMTZVJGVDND"
+aws_access_key : "TQ5QmtjIP59taHP0Rd8w9JzxyVFr3yAkFIl46DPp"
+aws_bucket : "srshackfiles"
+#access key id - 
+#secret access key - 
+#bucket name - 

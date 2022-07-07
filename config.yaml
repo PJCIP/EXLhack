@@ -2,6 +2,7 @@ azure_storage_connectionstring : "DefaultEndpointsProtocol=https;AccountName=hac
 files_container : "files"
 account_url : "https://hack22.blob.core.windows.net"
 key : "TDA3NqgbP5eHuhHeJZPuZo0hNZMre4kGXdvtXEobRfRCo8V+2a1RI6QKyBrWKmv3DziNonk+1NgL+AStD7A+aw=="
+az_account : "hack22"
 # source_folder : ""
 
 

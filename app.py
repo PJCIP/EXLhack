@@ -1,6 +1,6 @@
 
 from flask import Flask, request, send_file
-
+from botocore.config import Config
 import os
 import time
 from logging.handlers import  RotatingFileHandler
@@ -14,6 +14,8 @@ import traceback
 from azure.storage.blob import ContainerClient, BlobServiceClient
 import boto3
 from botocore.exceptions import ClientError
+from datetime import datetime, timedelta
+from azure.storage.blob import BlobServiceClient,BlobSasPermissions, generate_account_sas, ResourceTypes, AccountSasPermissions,generate_blob_sas
 
 
 def check_files(files):
@@ -138,25 +140,110 @@ def retrieve_files():
         connection_string = config["azure_storage_connectionstring"]
         container_name = config["files_container"]
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-        try:
-            blob_client = blob_service_client.get_blob_client(container=container_name, blob=file_name)
-            download_path = os.path.join(local_path, file_name)
+    
+        container_client = blob_service_client.get_container_client(container_name)
+        blob_list = container_client.list_blobs()
+        b_list = [blob.name for blob in blob_list]
+        # filename = file_name.filename
+        if file_name not in b_list:
+            return f'{file_name} is not in blob storage. The available files are {b_list}'
+        else:
+            try:
+                blob_client = blob_service_client.get_blob_client(container=container_name, blob=file_name)
+                download_path = os.path.join(local_path, file_name)
 
-            with open(download_path, "wb") as download_file:
-                download_file.write(blob_client.download_blob().readall())
-            print("Blob downloaded.")
-            return send_file(download_path, as_attachment=True)
-            
-        except Exception as e:
-            return f'Unable to download from azure. The reason is {e}'
+                with open(download_path, "wb") as download_file:
+                    download_file.write(blob_client.download_blob().readall())
+                print("Blob downloaded.")
+                return send_file(download_path, as_attachment=True)
+                
+            except Exception as e:
+                return f'Unable to download from azure. The reason is {e}'
 
     elif service_type == "AWS":
         try:
             bucket = config["aws_bucket"]
             download_path = os.path.join(local_path, file_name)
+            s3c = boto3.client('s3',aws_access_key_id = config["aws_key_id"],aws_secret_access_key=config["aws_access_key"])
             s3 = boto3.resource('s3',aws_access_key_id = config["aws_key_id"],aws_secret_access_key=config["aws_access_key"])
-            s3.Bucket(bucket).download_file(file_name, download_path)
-            return send_file(download_path, as_attachment=True)
+            contents = []
+            filenames = []
+            for item in s3c.list_objects(Bucket=bucket)['Contents']:
+                contents.append(item)
+                filenames.append(item['Key'])
+            # filename = file_name.filename
+            if file_name not in filenames:
+                 return f'{file_name} is not in blob storage. The available files are {filenames}'
+            else:
+                s3.Bucket(bucket).download_file(file_name, download_path)
+                return send_file(download_path, as_attachment=True)
+        except Exception as e:
+            return f'Unable to download from AWS. The reason is {e}'
+    else:
+        return '''As of now only Azure and AWS storage is supported... Meanwhile parameter is case sensitive if you are
+        looking for azure or aws. Type [Azure for azure or AWS for aws]'''
+
+@app.route('/retrieve_temp_file', methods=["POST", "GET"])
+def retrieve_temp_files():
+    data = request.form
+    file_name = data['file_name']
+    mins = int(data['minutes'])
+    service_type = data['service_type']
+    local_path = "./download"
+    config = load_config()
+    if not os.path.exists(local_path):
+        os.mkdir(local_path)
+            
+    if service_type == "Azure":
+        connection_string = config["azure_storage_connectionstring"]
+        container_name = config["files_container"]
+        blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+        container_client = blob_service_client.get_container_client(container_name)
+        blob_list = container_client.list_blobs()
+        b_list = [blob.name for blob in blob_list]
+        # filename = file_name.filename
+        if file_name not in b_list:
+            return f'{file_name} is not in blob storage. The available files are {b_list}'
+        else:
+            try:
+                AZURE_ACC_NAME = config["az_account"]
+                AZURE_PRIMARY_KEY = config["key"] 
+                AZURE_CONTAINER = config["files_container"] 
+                sas = generate_blob_sas(account_name=AZURE_ACC_NAME,
+                                        account_key=AZURE_PRIMARY_KEY,
+                                        container_name=AZURE_CONTAINER,
+                                        blob_name=file_name,
+                                        permission=BlobSasPermissions(read=True),                                        
+                                        expiry= datetime.utcnow() + timedelta(minutes=mins))
+
+                # start = datetime.utcnow(),
+                sas_url ='https://'+AZURE_ACC_NAME+'.blob.core.windows.net/'+AZURE_CONTAINER+'/'+file_name+'?'+sas
+                # sas_url ="https://{AZURE_ACC_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/{file_name}?{sas}"
+                
+                return sas_url
+            except Exception as e:
+                return f'Unable to create temp url from azure. The reason is {e}'
+
+    elif service_type == "AWS":
+        try:
+            bucket = config["aws_bucket"]
+            download_path = os.path.join(local_path, file_name)
+            s3c = boto3.client('s3',aws_access_key_id = config["aws_key_id"],aws_secret_access_key=config["aws_access_key"],region_name="ap-south-1",config=Config(signature_version='s3v4'))
+            s3 = boto3.resource('s3',aws_access_key_id = config["aws_key_id"],aws_secret_access_key=config["aws_access_key"])
+            contents = []
+            filenames = []
+            for item in s3c.list_objects(Bucket=bucket)['Contents']:
+                contents.append(item)
+                filenames.append(item['Key'])
+            # filename = file_name.filename
+            if file_name not in filenames:
+                 return f'{file_name} is not in S3 Bucket. The available files are {filenames}'
+            else:
+                response = s3c.generate_presigned_url('get_object',
+                                                    Params={'Bucket': bucket,
+                                                            'Key': file_name},
+                                                    ExpiresIn=mins*60)
+                return response
         except Exception as e:
             return f'Unable to download from AWS. The reason is {e}'
     else:

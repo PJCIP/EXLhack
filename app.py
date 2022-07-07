@@ -158,7 +158,7 @@ def retrieve_files():
         user = data['username']
         passw = data['password']
     except Exception as e:
-        return 'Please check whether you have provided file, username, password and service_type in the form {}'.format(e)
+        return 'Please check whether you have provided file, username, password and service_type in the form'
     if len(user) == 0 or len(passw) == 0:
         return f'Username and password are mandatory'
     if user != username or passw!=password:

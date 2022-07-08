@@ -47,6 +47,9 @@ def upload_file():
     data = request.form
     try:
         file = request.files['file']
+    except Exception as e:
+        return 'Some issue with the file uploading... The reason is {}'.format(e)
+    try:
         user = data['username']
         passw = data['password']
         service_type = data['service_type']
@@ -119,7 +122,7 @@ def get_files():
         user = data['username']
         passw = data['password']
     except:
-        return 'Please check whether you have provided file, username, password and service_type in the form'
+        return 'Please check whether you have provided username, password and service_type in the form'
     config = load_config()
     if len(user) == 0 or len(passw) == 0:
         return f'Username and password are mandatory'
@@ -158,7 +161,7 @@ def retrieve_files():
         user = data['username']
         passw = data['password']
     except Exception as e:
-        return 'Please check whether you have provided file, username, password and service_type in the form'
+        return 'Please check whether you have provided file_name, username, password and service_type in the form'
     if len(user) == 0 or len(passw) == 0:
         return f'Username and password are mandatory'
     if user != username or passw!=password:
@@ -228,7 +231,7 @@ def retrieve_temp_files():
         user = data['username']
         passw = data['password']
     except:
-        return 'Please check whether you have provided file, username, password and service_type in the form'
+        return 'Please check whether you have provided file_name, minutes, username, password and service_type in the form'
     local_path = "./download"
     config = load_config()
     if not os.path.exists(local_path):

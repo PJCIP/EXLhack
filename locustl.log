@@ -1,0 +1,28 @@
+[2022-07-09 16:03:30,089] DESKTOP-U1KASC4/INFO/locust.main: Starting web interface at http://0.0.0.0:8089 (accepting connections from all network interfaces)
+[2022-07-09 16:03:30,117] DESKTOP-U1KASC4/INFO/locust.main: Starting Locust 2.10.1
+[2022-07-09 16:03:34,818] DESKTOP-U1KASC4/INFO/locust.runners: Ramping to 10 users at a rate of 1.00 per second
+[2022-07-09 16:03:40,881] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:41,778] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:43,876] DESKTOP-U1KASC4/INFO/locust.runners: All users spawned: {"User": 10} (10 total users)
+[2022-07-09 16:03:45,791] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:46,756] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:49,563] DESKTOP-U1KASC4/INFO/root: /upload_file:200
+[2022-07-09 16:03:50,752] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:53,422] DESKTOP-U1KASC4/INFO/root: /upload_file:200
+[2022-07-09 16:03:54,552] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:03:54,601] DESKTOP-U1KASC4/INFO/root: /get_file_name[200]:The files present in Azure are ['IndianFoodDatasetCSV.csv', 'IndianFoodDatasetXLS.xlsx', 'ajec.txt', 'firstdoc2.txt', 'firstdocaz', 'intro.txt', 'sample.txt']
+[2022-07-09 16:03:54,647] DESKTOP-U1KASC4/INFO/root: /get_file_name[200]:The files present in Azure are ['IndianFoodDatasetCSV.csv', 'IndianFoodDatasetXLS.xlsx', 'ajec.txt', 'firstdoc2.txt', 'firstdocaz', 'intro.txt', 'sample.txt']
+[2022-07-09 16:03:54,960] DESKTOP-U1KASC4/INFO/root: /retrieve_temp_file[200]:https://srshackfiles.s3.amazonaws.com/firstdoc.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYJHAXWMTZVJGVDND%2F20220709%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220709T103355Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=8d0104c9235234d3613e4c08e0e5dd70f9b215960919a880cdeb1139c270db79
+[2022-07-09 16:03:54,996] DESKTOP-U1KASC4/INFO/root: /get_file_name[200]:The files present in Azure are ['IndianFoodDatasetCSV.csv', 'IndianFoodDatasetXLS.xlsx', 'ajec.txt', 'firstdoc2.txt', 'firstdocaz', 'intro.txt', 'sample.txt']
+[2022-07-09 16:03:57,811] DESKTOP-U1KASC4/INFO/root: /upload_file:200
+[2022-07-09 16:03:59,586] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:04:00,484] DESKTOP-U1KASC4/INFO/root: /upload_file:200
+[2022-07-09 16:04:04,590] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:04:05,666] DESKTOP-U1KASC4/INFO/root: Starting page works fine
+[2022-07-09 16:04:05,679] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:04:05,701] DESKTOP-U1KASC4/INFO/root: /get_file_name[200]:The files present in Azure are ['IndianFoodDatasetCSV.csv', 'IndianFoodDatasetXLS.xlsx', 'ajec.txt', 'firstdoc2.txt', 'firstdocaz', 'intro.txt', 'sample.txt']
+[2022-07-09 16:04:05,723] DESKTOP-U1KASC4/INFO/root: Starting page works fine
+[2022-07-09 16:04:05,799] DESKTOP-U1KASC4/INFO/root: /get_file_name[200]:The files present in Azure are ['IndianFoodDatasetCSV.csv', 'IndianFoodDatasetXLS.xlsx', 'ajec.txt', 'firstdoc2.txt', 'firstdocaz', 'intro.txt', 'sample.txt']
+[2022-07-09 16:04:08,461] DESKTOP-U1KASC4/INFO/root: /upload_file:200
+[2022-07-09 16:04:09,747] DESKTOP-U1KASC4/INFO/root: /retrieve_file[200]:Hello Azure
+[2022-07-09 16:04:10,174] DESKTOP-U1KASC4/INFO/root: /retrieve_temp_file[200]:https://srshackfiles.s3.amazonaws.com/firstdoc.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYJHAXWMTZVJGVDND%2F20220709%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220709T103410Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=dc8ea6e2409fbcf7e7fe709884ddbb43c55d00a0a12889b7c1126c4569ac5884

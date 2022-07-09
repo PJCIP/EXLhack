@@ -3,6 +3,7 @@ import uuid
 import random
 import string
 import logging
+import os
 
 class UserBehaviour(TaskSet):
     @task
@@ -26,6 +27,10 @@ class UserBehaviour(TaskSet):
     @task
     def uploads(self):
         url = '/upload_file'
+        path = './testfiles'
+        isExist = os.path.exists(path)
+        if not isExist:
+            os.makedirs(path)
         letters = string.ascii_lowercase
         result_str = ''.join(random.choice(letters) for i in range(4))
         filename = './testfiles/{}.txt'.format(result_str)

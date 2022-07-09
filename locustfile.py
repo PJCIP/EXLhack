@@ -50,4 +50,4 @@ class User(HttpUser):
     tasks=[UserBehaviour]
     min_wait = 5000
     max_wait = 15000
-    host = "https://exlsrs.herokuapp.com"
+    host = "https://srsexl.azurewebsites.net"
